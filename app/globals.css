@@ -55,6 +55,49 @@ body {
 .animate-slide-left    { animation: slideInLeft   0.35s cubic-bezier(0.32,0,0.67,0) forwards; }
 .animate-scale-in      { animation: scaleIn       0.3s ease forwards; }
 
+/* ── Mascot animations ────────────────────────────────────────────────── */
+@keyframes mascotFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1.5deg);
+  }
+}
+
+@keyframes mascotShadow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(0.78);
+    opacity: 0.18;
+  }
+}
+
+@keyframes mascotBlink {
+  0%, 94%, 98%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.08);
+  }
+}
+
+.animate-mascot-float {
+  animation: mascotFloat 3.8s ease-in-out infinite;
+}
+
+.animate-mascot-shadow {
+  animation: mascotShadow 3.8s ease-in-out infinite;
+}
+
+.animate-mascot-blink {
+  animation: mascotBlink 4.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
 /* stagger helpers */
 .stagger-1 { animation-delay: 0.1s; }
 .stagger-2 { animation-delay: 0.2s; }
@@ -64,7 +107,10 @@ body {
 
 /* ── Reduced-motion override ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ── Product image hover zoom ─────────────────────────────────────────── */
