@@ -102,8 +102,8 @@ export const PRODUCTS: Product[] = [
     category: "printed",
     price: 1399,
     images: [
-      "/images/products/streetcode-1.jpg",
-      "/images/products/streetcode-2.jpg",
+      "https://placehold.co/800x1067/c2410c/ffffff?text=STREETCODE",
+      "https://placehold.co/800x1067/1e3a5f/ffffff?text=STREETCODE+2",
     ],
     colors: [
       { name: "Rust", hex: "#c2410c" },
@@ -125,8 +125,8 @@ export const PRODUCTS: Product[] = [
     price: 1199,
     originalPrice: 1499,
     images: [
-      "/images/products/boxy-1.jpg",
-      "/images/products/boxy-2.jpg",
+      "https://placehold.co/800x1067/d4c5a9/0a0a0a?text=BOXY",
+      "https://placehold.co/800x1067/3f3f46/ffffff?text=BOXY+2",
     ],
     colors: [
       { name: "Sand", hex: "#d4c5a9" },
