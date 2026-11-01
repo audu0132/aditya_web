@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
+import NewsletterForm from "@/components/NewsletterForm";
 import { PRODUCTS, CATEGORIES } from "@/lib/products";
 import type { Metadata } from "next";
 
@@ -182,23 +183,7 @@ export default function HomePage() {
           <p className="text-xs tracking-[0.4em] text-zinc-400 mb-3">STAY IN THE LOOP</p>
           <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">EARLY ACCESS. DROPS. DEALS.</h2>
           <p className="text-zinc-500 text-sm mb-8">No spam, just the good stuff. Unsubscribe anytime.</p>
-          <form
-            className="flex flex-col sm:flex-row gap-3"
-            onSubmit={(e) => { e.preventDefault(); alert("Thanks! You're on the list."); }}
-          >
-            <input
-              type="email"
-              required
-              placeholder="your@email.com"
-              className="flex-1 border border-zinc-300 px-4 py-3 text-sm focus:outline-none focus:border-zinc-950 transition-colors"
-            />
-            <button
-              type="submit"
-              className="bg-zinc-950 text-white px-8 py-3 text-xs font-bold tracking-widest hover:bg-zinc-800 transition-colors"
-            >
-              SUBSCRIBE
-            </button>
-          </form>
+          <NewsletterForm />
         </div>
       </section>
 
