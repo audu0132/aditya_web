@@ -23,3 +23,4 @@ export default function WishlistButton({ productId }: { productId: string }) {
     </button>
   );
 }
+

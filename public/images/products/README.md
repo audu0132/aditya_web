@@ -44,3 +44,4 @@ https://placehold.co/800x1067/e4e4e7/71717a?text=STREETKRAFT
 ```
 
 To use: edit `lib/products.ts` and set the image URLs to the placeholder URL above.
+
