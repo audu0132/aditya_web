@@ -32,8 +32,8 @@ export const PRODUCTS: Product[] = [
     price: 1299,
     originalPrice: 1799,
     images: [
-      "/images/products/acid-wash-1.jpg",
-      "/images/products/acid-wash-2.jpg",
+      "https://placehold.co/800x1067/2a2a2a/ffffff?text=ACID+WASH",
+      "https://placehold.co/800x1067/3f3f46/ffffff?text=ACID+WASH+2",
     ],
     colors: [
       { name: "Washed Black", hex: "#2a2a2a" },
@@ -55,8 +55,8 @@ export const PRODUCTS: Product[] = [
     category: "graphic",
     price: 1499,
     images: [
-      "/images/products/phantom-1.jpg",
-      "/images/products/phantom-2.jpg",
+      "https://placehold.co/800x1067/0a0a0a/ffffff?text=PHANTOM",
+      "https://placehold.co/800x1067/f5f5f0/0a0a0a?text=PHANTOM+2",
     ],
     colors: [
       { name: "Jet Black", hex: "#0a0a0a" },
@@ -78,8 +78,8 @@ export const PRODUCTS: Product[] = [
     category: "minimal",
     price: 999,
     images: [
-      "/images/products/void-1.jpg",
-      "/images/products/void-2.jpg",
+      "https://placehold.co/800x1067/fafafa/0a0a0a?text=VOID",
+      "https://placehold.co/800x1067/64748b/ffffff?text=VOID+2",
     ],
     colors: [
       { name: "Chalk White", hex: "#fafafa" },
