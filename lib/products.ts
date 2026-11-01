@@ -148,8 +148,8 @@ export const PRODUCTS: Product[] = [
     category: "graphic",
     price: 1099,
     images: [
-      "/images/products/arch-1.jpg",
-      "/images/products/arch-2.jpg",
+      "https://placehold.co/800x1067/166534/ffffff?text=ARCH",
+      "https://placehold.co/800x1067/fefce8/166534?text=ARCH+2",
     ],
     colors: [
       { name: "Forest Green", hex: "#166534" },
