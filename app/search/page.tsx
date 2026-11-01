@@ -18,7 +18,18 @@ export default function SearchPage() {
     );
   }, [query]);
 
-  const suggestions = ["oversized", "graphic", "black", "white", "minimal", "printed"];
+  const suggestions = [
+    "oversized",
+    "graphic",
+    "acid wash",
+    "minimal",
+    "printed",
+    "heavyweight",
+    "vintage",
+    "tokyo",
+    "black",
+    "cotton",
+  ];
 
   return (
     <div className="pt-24 pb-24">
