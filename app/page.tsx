@@ -6,82 +6,129 @@ import { PRODUCTS, CATEGORIES } from "@/lib/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "STREETKRAFT — Premium T-Shirts for Gen-Z",
-  description: "Oversized, graphic, printed and minimal tees. Free shipping above ₹999.",
+  title: "STREETKRAFT — Premium Streetwear T-Shirts",
+  description: "Oversized, graphic, printed and minimal tees. 240 GSM heavy cotton. Free shipping above ₹999.",
 };
 
 export default function HomePage() {
-  const bestSellers = PRODUCTS.filter((p) => p.badge === "Best Seller" || p.badge === "New").slice(0, 4);
   const newArrivals = PRODUCTS.filter((p) => p.badge === "New").slice(0, 4);
+  const bestSellers = PRODUCTS.filter((p) => p.badge === "Best Seller").slice(0, 4);
+  const oversizedPicks = PRODUCTS.filter((p) => p.category === "oversized").slice(0, 4);
+
+  const categoryImages: Record<string, string> = {
+    oversized: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80",
+    graphic: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+    printed: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
+    minimal: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+  };
 
   return (
     <>
       {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-zinc-950">
-        {/* Background placeholder — replace with real campaign image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black" />
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }}
-        />
+      <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-zinc-950">
+        {/* Background Image / Ambient Lighting */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1920&q=85"
+            alt="Streetwear campaign"
+            fill
+            priority
+            className="object-cover opacity-35 filter grayscale contrast-125 scale-105 animate-fade-in"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/40" />
+        </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <p
-            className="text-xs sm:text-sm tracking-[0.4em] text-zinc-400 mb-6 animate-fade-up opacity-0"
+          <div
+            className="inline-flex items-center gap-2 border border-white/20 bg-white/5 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.3em] text-zinc-300 mb-6 animate-fade-up opacity-0"
             style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
           >
-            STREETWEAR ESSENTIALS · SS 2025
-          </p>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            SS26 STREETWEAR DROP · 16 NEW STYLES
+          </div>
+
           <h1
-            className="text-[clamp(3rem,12vw,9rem)] font-black leading-[0.9] tracking-tighter text-white animate-fade-up opacity-0"
-            style={{ animationDelay: "0.2s", animationFillMode: "forwards", fontFamily: "var(--font-display, 'Impact')" }}
+            className="text-[clamp(3rem,11vw,8.5rem)] font-black leading-[0.9] tracking-tighter text-white animate-fade-up opacity-0"
+            style={{
+              animationDelay: "0.2s",
+              animationFillMode: "forwards",
+              fontFamily: "var(--font-display, 'Impact')",
+            }}
           >
             WEAR YOUR<br />
-            <span className="text-transparent" style={{ WebkitTextStroke: "2px white" }}>ATTITUDE.</span>
+            <span className="text-transparent" style={{ WebkitTextStroke: "2px white" }}>
+              ATTITUDE.
+            </span>
           </h1>
+
           <p
-            className="mt-6 text-zinc-400 text-base sm:text-lg max-w-md mx-auto leading-relaxed animate-fade-up opacity-0"
+            className="mt-6 text-zinc-300 text-base sm:text-lg max-w-lg mx-auto leading-relaxed animate-fade-up opacity-0 font-medium"
             style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}
           >
-            Everyday essentials. Unapologetic streetwear. Made to stand out.
+            240 GSM heavy combed cotton. Boxy drop-shoulder silhouettes. Unapologetic streetwear designed to turn heads.
           </p>
+
           <div
             className="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-up opacity-0"
             style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
           >
             <Link
               href="/shop"
-              className="bg-white text-zinc-950 px-10 py-4 text-sm font-bold tracking-widest hover:bg-zinc-100 transition-colors"
+              data-cursor="view"
+              className="bg-white text-zinc-950 px-10 py-4 text-xs font-black tracking-widest hover:bg-zinc-200 transition-colors shadow-2xl"
             >
-              SHOP NOW
+              SHOP ALL TEES ({PRODUCTS.length})
             </Link>
             <Link
               href="/collections"
-              className="border border-white text-white px-10 py-4 text-sm font-bold tracking-widest hover:bg-white/10 transition-colors"
+              className="border border-white/70 text-white px-10 py-4 text-xs font-black tracking-widest hover:bg-white/10 transition-colors backdrop-blur-sm"
             >
-              EXPLORE COLLECTION
+              EXPLORE COLLECTIONS
             </Link>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 animate-fade-in" style={{ animationDelay: "1.2s" }}>
-          <span className="text-[10px] tracking-widest">SCROLL</span>
-          <div className="w-px h-10 bg-white/20 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full bg-white/60" style={{ height: "40%", animation: "fadeUp 1.5s ease infinite" }} />
+        <div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-fade-in"
+          style={{ animationDelay: "1.2s" }}
+        >
+          <span className="text-[10px] font-bold tracking-widest uppercase">Scroll</span>
+          <div className="w-px h-8 bg-white/20 relative overflow-hidden">
+            <div
+              className="absolute top-0 left-0 w-full bg-white"
+              style={{ height: "40%", animation: "fadeUp 1.5s ease infinite" }}
+            />
           </div>
+        </div>
+      </section>
+
+      {/* ═══ TRUST TICKER ═════════════════════════════════════════════════ */}
+      <section className="border-y border-zinc-200 bg-zinc-100/60 py-3 overflow-hidden">
+        <div className="flex items-center justify-around gap-8 text-[11px] font-black tracking-widest uppercase text-zinc-600 px-4 max-w-7xl mx-auto flex-wrap">
+          <span className="flex items-center gap-2">🔥 240 GSM Heavy Cotton</span>
+          <span className="hidden sm:inline text-zinc-300">/</span>
+          <span className="flex items-center gap-2">⚡ Free Shipping Over ₹999</span>
+          <span className="hidden sm:inline text-zinc-300">/</span>
+          <span className="flex items-center gap-2">🔄 15-Day Hassle-Free Returns</span>
+          <span className="hidden sm:inline text-zinc-300">/</span>
+          <span className="flex items-center gap-2">📍 Designed & Made In India</span>
         </div>
       </section>
 
       {/* ═══ CATEGORIES ═════════════════════════════════════════════════ */}
       <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2
-            className="text-4xl sm:text-5xl font-black tracking-tight animate-fade-up opacity-0"
-            style={{ animationFillMode: "forwards" }}
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <p className="text-xs font-bold tracking-widest text-zinc-400 mb-1">CURATED LINES</p>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight">SHOP BY COLLECTION</h2>
+          </div>
+          <Link
+            href="/collections"
+            className="text-xs font-black tracking-widest hover:opacity-60 transition-opacity border-b border-zinc-950 pb-0.5"
           >
-            SHOP BY COLLECTION
-          </h2>
-          <p className="text-zinc-500 mt-2 text-sm tracking-wide">Find your fit, find your vibe</p>
+            VIEW ALL COLLECTIONS →
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -89,19 +136,33 @@ export default function HomePage() {
             <Link
               key={cat.id}
               href={`/shop?category=${cat.id}`}
-              className={`group relative overflow-hidden aspect-[3/4] bg-zinc-100 animate-fade-up opacity-0`}
+              data-cursor="view"
+              className="group relative overflow-hidden aspect-[3/4] bg-zinc-900 animate-fade-up opacity-0"
               style={{ animationDelay: `${i * 0.1}s`, animationFillMode: "forwards" }}
             >
-              {/* placeholder bg color */}
-              <div className={`absolute inset-0 transition-transform duration-700 group-hover:scale-105 ${
-                i === 0 ? "bg-zinc-200" : i === 1 ? "bg-stone-200" : i === 2 ? "bg-slate-200" : "bg-neutral-200"
-              }`} />
-              <div className="absolute inset-0 bg-zinc-950/30 group-hover:bg-zinc-950/50 transition-colors duration-300" />
-              <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-white">
-                <h3 className="text-lg sm:text-xl font-black tracking-widest">{cat.label.toUpperCase()}</h3>
-                <p className="text-xs text-white/70 mt-1">{cat.description}</p>
-                <span className="mt-3 text-xs tracking-widest border-b border-white/50 pb-0.5 group-hover:border-white transition-colors">
-                  EXPLORE →
+              <Image
+                src={categoryImages[cat.id] || "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80"}
+                alt={cat.label}
+                fill
+                sizes="(max-width:640px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter brightness-90 group-hover:brightness-75"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
+              <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-white text-center">
+                <span className="text-[10px] font-bold tracking-widest text-zinc-300 uppercase mb-1">
+                  Collection
+                </span>
+                <h3
+                  className="text-xl sm:text-2xl font-black tracking-widest"
+                  style={{ fontFamily: "var(--font-display, 'Impact')" }}
+                >
+                  {cat.label.toUpperCase()}
+                </h3>
+                <p className="text-xs text-white/70 mt-1 max-w-[180px] line-clamp-1">
+                  {cat.description}
+                </p>
+                <span className="mt-3 text-[10px] font-black tracking-widest border border-white/40 px-3 py-1 group-hover:bg-white group-hover:text-zinc-950 transition-colors">
+                  EXPLORE DROP
                 </span>
               </div>
             </Link>
@@ -110,23 +171,28 @@ export default function HomePage() {
       </section>
 
       {/* ═══ FEATURED / NEW ARRIVALS ════════════════════════════════════ */}
-      <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="text-xs tracking-widest text-zinc-400 mb-1">JUST DROPPED</p>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">NEW ARRIVALS</h2>
+            <div className="inline-block px-2.5 py-0.5 bg-zinc-950 text-white text-[10px] font-black tracking-widest uppercase mb-2">
+              Just Dropped
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight">NEW ARRIVALS</h2>
           </div>
-          <Link href="/shop?sort=new" className="text-sm font-semibold tracking-wide hover:opacity-60 transition-opacity">
-            VIEW ALL →
+          <Link
+            href="/shop?sort=new"
+            className="text-xs font-black tracking-widest hover:opacity-60 transition-opacity border-b border-zinc-950 pb-0.5"
+          >
+            VIEW ALL NEW ({PRODUCTS.filter((p) => p.badge === "New").length}) →
           </Link>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10">
-          {PRODUCTS.slice(0, 4).map((p, i) => (
+          {newArrivals.map((p, i) => (
             <div
               key={p.id}
               className="animate-fade-up opacity-0"
-              style={{ animationDelay: `${i * 0.1}s`, animationFillMode: "forwards" }}
+              style={{ animationDelay: `${i * 0.08}s`, animationFillMode: "forwards" }}
             >
               <ProductCard product={p} />
             </div>
@@ -135,41 +201,92 @@ export default function HomePage() {
       </section>
 
       {/* ═══ CAMPAIGN BANNER ════════════════════════════════════════════ */}
-      <section className="bg-zinc-950 text-white py-24 px-4 my-4 text-center">
-        <p className="text-xs tracking-[0.5em] text-zinc-400 mb-4">THE PHILOSOPHY</p>
-        <h2
-          className="text-[clamp(2rem,7vw,6rem)] font-black leading-tight tracking-tight"
-          style={{ fontFamily: "var(--font-display, 'Impact')" }}
-        >
-          BASICS ARE BORING.<br />
-          <span className="text-transparent" style={{ WebkitTextStroke: "1px white" }}>STAND OUT.</span>
-        </h2>
-        <Link
-          href="/shop"
-          className="inline-block mt-10 border border-white/50 text-white px-10 py-4 text-xs font-bold tracking-widest hover:bg-white hover:text-zinc-950 transition-colors"
-        >
-          SHOP THE COLLECTION
-        </Link>
+      <section className="bg-zinc-950 text-white py-28 px-4 my-8 text-center relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
+          <Image
+            src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1920&q=80"
+            alt="Streetwear texture"
+            fill
+            className="object-cover filter grayscale"
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <p className="text-xs font-black tracking-[0.5em] text-zinc-400 mb-4 uppercase">
+            STREETWEAR MANIFESTO
+          </p>
+          <h2
+            className="text-[clamp(2.2rem,7vw,6.5rem)] font-black leading-tight tracking-tight uppercase"
+            style={{ fontFamily: "var(--font-display, 'Impact')" }}
+          >
+            BASICS ARE BORING.<br />
+            <span className="text-transparent" style={{ WebkitTextStroke: "1.5px white" }}>
+              STAND OUT EVERYWHERE.
+            </span>
+          </h2>
+          <p className="text-zinc-400 text-sm sm:text-base mt-6 max-w-md mx-auto">
+            Heavyweight luxury streetwear tailored for everyday grit. Engineered with custom washes and pre-shrunk cotton.
+          </p>
+          <Link
+            href="/shop"
+            data-cursor="view"
+            className="inline-block mt-8 bg-white text-zinc-950 px-10 py-4 text-xs font-black tracking-widest hover:bg-zinc-200 transition-colors shadow-2xl"
+          >
+            SHOP THE FULL COLLECTION ({PRODUCTS.length} TEES)
+          </Link>
+        </div>
       </section>
 
       {/* ═══ BEST SELLERS ════════════════════════════════════════════════ */}
-      <section className="py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <section className="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="text-xs tracking-widest text-zinc-400 mb-1">FAN FAVOURITES</p>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight">BEST SELLERS</h2>
+            <div className="inline-block px-2.5 py-0.5 bg-amber-400 text-zinc-950 text-[10px] font-black tracking-widest uppercase mb-2">
+              Most Wanted
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight">BEST SELLERS</h2>
           </div>
-          <Link href="/shop?badge=Best+Seller" className="text-sm font-semibold tracking-wide hover:opacity-60 transition-opacity">
-            VIEW ALL →
+          <Link
+            href="/shop?badge=Best+Seller"
+            className="text-xs font-black tracking-widest hover:opacity-60 transition-opacity border-b border-zinc-950 pb-0.5"
+          >
+            SHOP BEST SELLERS →
           </Link>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10">
-          {PRODUCTS.slice(2, 6).map((p, i) => (
+          {bestSellers.map((p, i) => (
             <div
               key={p.id}
               className="animate-fade-up opacity-0"
-              style={{ animationDelay: `${i * 0.1}s`, animationFillMode: "forwards" }}
+              style={{ animationDelay: `${i * 0.08}s`, animationFillMode: "forwards" }}
+            >
+              <ProductCard product={p} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══ THE OVERSIZED EDIT ═════════════════════════════════════════ */}
+      <section className="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="flex items-end justify-between mb-10">
+          <div>
+            <p className="text-xs font-bold tracking-widest text-zinc-400 mb-1">HEAVYWEIGHT CUTS</p>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight">THE OVERSIZED EDIT</h2>
+          </div>
+          <Link
+            href="/shop?category=oversized"
+            className="text-xs font-black tracking-widest hover:opacity-60 transition-opacity border-b border-zinc-950 pb-0.5"
+          >
+            ALL OVERSIZED TEES →
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10">
+          {oversizedPicks.map((p, i) => (
+            <div
+              key={p.id}
+              className="animate-fade-up opacity-0"
+              style={{ animationDelay: `${i * 0.08}s`, animationFillMode: "forwards" }}
             >
               <ProductCard product={p} />
             </div>
@@ -178,11 +295,17 @@ export default function HomePage() {
       </section>
 
       {/* ═══ NEWSLETTER ═════════════════════════════════════════════════ */}
-      <section className="py-20 px-4 bg-zinc-50">
+      <section className="py-24 px-4 bg-zinc-50 border-t border-zinc-200">
         <div className="max-w-xl mx-auto text-center">
-          <p className="text-xs tracking-[0.4em] text-zinc-400 mb-3">STAY IN THE LOOP</p>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">EARLY ACCESS. DROPS. DEALS.</h2>
-          <p className="text-zinc-500 text-sm mb-8">No spam, just the good stuff. Unsubscribe anytime.</p>
+          <p className="text-xs font-black tracking-[0.4em] text-zinc-400 mb-3 uppercase">
+            STAY IN THE STREET LOOP
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">
+            EARLY ACCESS. SECRET DROPS.
+          </h2>
+          <p className="text-zinc-500 text-sm mb-8">
+            Get 10% off your first demo order. Drop alerts straight to your inbox.
+          </p>
           <NewsletterForm />
         </div>
       </section>
@@ -190,6 +313,19 @@ export default function HomePage() {
       {/* ═══ FOOTER ═════════════════════════════════════════════════════ */}
       <footer className="bg-zinc-950 text-white pt-16 pb-8 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
+          {/* Demo disclaimer banner */}
+          <div className="mb-12 p-4 bg-zinc-900 border border-zinc-800 rounded text-xs text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-amber-400" />
+              <span>
+                <strong>DEMO SHOWCASE:</strong> This is a conceptual streetwear e-commerce platform. All products, mockups, and prices (₹) are sample demo content.
+              </span>
+            </div>
+            <span className="text-[10px] uppercase tracking-wider text-zinc-500">
+              STREETKRAFT STUDIO
+            </span>
+          </div>
+
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2 sm:col-span-1">
               <div
@@ -199,20 +335,51 @@ export default function HomePage() {
                 STREETKRAFT
               </div>
               <p className="text-zinc-400 text-xs leading-relaxed">
-                Premium streetwear for those who refuse to blend in.
+                Independent streetwear label crafted for the digital generation. 240 GSM heavy cotton silhouettes built for longevity.
               </p>
             </div>
             {[
-              { title: "Shop", links: ["All Products", "New Arrivals", "Best Sellers", "Collections"] },
-              { title: "Help", links: ["Size Guide", "Shipping & Returns", "Track Order", "FAQs"] },
-              { title: "About", links: ["Our Story", "Sustainability", "Careers", "Contact"] },
+              {
+                title: "Collections",
+                links: [
+                  { label: "Oversized Tees", href: "/shop?category=oversized" },
+                  { label: "Graphic Streetwear", href: "/shop?category=graphic" },
+                  { label: "Pattern Printed", href: "/shop?category=printed" },
+                  { label: "Minimalist Essentials", href: "/shop?category=minimal" },
+                ],
+              },
+              {
+                title: "Support",
+                links: [
+                  { label: "Size & Fit Guide", href: "/about" },
+                  { label: "Shipping Policy (₹999 Free)", href: "/about" },
+                  { label: "Easy 15-Day Returns", href: "/about" },
+                  { label: "Track Package", href: "/shop" },
+                ],
+              },
+              {
+                title: "Brand",
+                links: [
+                  { label: "Our Story", href: "/about" },
+                  { label: "Fabric & GSM Guide", href: "/about" },
+                  { label: "Sustainability", href: "/about" },
+                  { label: "Contact Us", href: "/about" },
+                ],
+              },
             ].map((col) => (
               <div key={col.title}>
-                <h4 className="text-xs font-bold tracking-widest mb-4 text-zinc-300">{col.title.toUpperCase()}</h4>
+                <h4 className="text-xs font-black tracking-widest mb-4 text-zinc-300">
+                  {col.title.toUpperCase()}
+                </h4>
                 <ul className="space-y-2.5">
                   {col.links.map((l) => (
-                    <li key={l}>
-                      <Link href="/shop" className="text-xs text-zinc-400 hover:text-white transition-colors">{l}</Link>
+                    <li key={l.label}>
+                      <Link
+                        href={l.href}
+                        className="text-xs text-zinc-400 hover:text-white transition-colors"
+                      >
+                        {l.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -221,8 +388,12 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-zinc-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-zinc-500 text-xs">© 2025 STREETKRAFT. All rights reserved.</p>
-            <p className="text-zinc-500 text-xs">Made with ❤️ in India · Prices in ₹ INR</p>
+            <p className="text-zinc-500 text-xs">
+              © 2026 STREETKRAFT APPAREL. All rights reserved.
+            </p>
+            <p className="text-zinc-500 text-xs">
+              Crafted in India · All prices in Indian Rupee (₹ INR)
+            </p>
           </div>
         </div>
       </footer>
