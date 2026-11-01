@@ -265,3 +265,4 @@ export default function ProductDetailClient({ product, related }: Props) {
     </>
   );
 }
+

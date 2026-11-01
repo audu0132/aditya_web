@@ -34,3 +34,4 @@ export default async function ProductPage({ params }: Props) {
     </div>
   );
 }
+
