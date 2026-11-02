@@ -26,22 +26,23 @@ export default function HomePage() {
     <>
       {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[660px] flex items-center overflow-hidden bg-zinc-950 pt-20 pb-16">
-        {/* Cinematic Male Streetwear Model Background (Positioned toward the right) */}
+        {/* Cinematic Male Streetwear Model Background (Stored locally in public/images) */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=2400&q=90"
-            alt="Men's Streetwear Fashion Campaign - Male model in oversized black graphic tee against graffiti concrete"
+            src="/images/hero-mens-streetwear.jpg"
+            alt="Men's Streetwear Fashion Campaign - Young male model in oversized black graphic T-shirt against dark concrete wall"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[78%_center] sm:object-[72%_center] lg:object-[82%_center] filter grayscale contrast-115 brightness-90 animate-fade-in"
+            className="object-cover object-[75%_center] sm:object-[75%_center] lg:object-[82%_center] filter grayscale contrast-115 brightness-95 animate-fade-in"
           />
           {/* Multi-layered cinematic gradient overlays:
-              1. Left-to-right gradient ensuring text on left/center is 100% crisp & readable
-              2. Top and bottom vignette so header and scroll indicator blend smoothly */}
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/85 to-transparent sm:via-zinc-950/75 lg:from-zinc-950 lg:via-zinc-950/70 lg:to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/80" />
-          <div className="absolute inset-0 bg-black/25 sm:bg-transparent" />
+              1. Deep dark gradient on the left for maximum text contrast
+              2. Right side fades to transparent to let the male model pop cleanly
+              3. Top and bottom vignettes blend with sticky navbar and scroll indicator */}
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/85 to-transparent sm:via-zinc-950/75 lg:from-zinc-950 lg:via-zinc-950/65 lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/75" />
+          <div className="absolute inset-0 bg-black/20 sm:bg-transparent" />
         </div>
 
         {/* Content Container positioned to left / center */}
