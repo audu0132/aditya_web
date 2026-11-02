@@ -58,8 +58,8 @@ export const PRODUCTS: Product[] = [
     price: 1499,
     originalPrice: 1999,
     images: [
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618354691438-25bc04584c03?auto=format&fit=crop&w=800&q=80",
     ],
     colors: [
       { name: "Jet Black", hex: "#0a0a0a" },
@@ -106,7 +106,7 @@ export const PRODUCTS: Product[] = [
     price: 1399,
     images: [
       "https://images.unsplash.com/photo-1622445268046-630d7aa44342?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1583744946564-b52ac1c389c8?auto=format&fit=crop&w=800&q=80",
     ],
     colors: [
       { name: "Obsidian Black", hex: "#171717" },
@@ -272,7 +272,7 @@ export const PRODUCTS: Product[] = [
     originalPrice: 2299,
     images: [
       "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?auto=format&fit=crop&w=800&q=80",
     ],
     colors: [
       { name: "Carbon Black", hex: "#1f2937" },
@@ -365,7 +365,7 @@ export const PRODUCTS: Product[] = [
     price: 1549,
     originalPrice: 1999,
     images: [
-      "https://images.unsplash.com/photo-1503342394128-c104d54dba01?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1622445268046-630d7aa44342?auto=format&fit=crop&w=800&q=80",
     ],
     colors: [
@@ -389,7 +389,7 @@ export const PRODUCTS: Product[] = [
     price: 1399,
     images: [
       "https://images.unsplash.com/photo-1618354691438-25bc04584c03?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80",
     ],
     colors: [
       { name: "Pitch Black", hex: "#09090b" },
