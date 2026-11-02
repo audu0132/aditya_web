@@ -17,7 +17,7 @@ export default function HomePage() {
 
   const categoryImages: Record<string, string> = {
     oversized: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80",
-    graphic: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+    graphic: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80",
     printed: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
     minimal: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
   };
@@ -25,72 +25,85 @@ export default function HomePage() {
   return (
     <>
       {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
-      <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-zinc-950">
-        {/* Background Image / Ambient Lighting */}
+      <section className="relative h-screen min-h-[660px] flex items-center overflow-hidden bg-zinc-950 pt-20 pb-16">
+        {/* Cinematic Male Streetwear Model Background (Positioned toward the right) */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1920&q=85"
-            alt="Streetwear campaign"
+            src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=2400&q=90"
+            alt="Men's Streetwear Fashion Campaign - Male model in oversized black graphic tee against graffiti concrete"
             fill
             priority
-            className="object-cover opacity-35 filter grayscale contrast-125 scale-105 animate-fade-in"
+            sizes="100vw"
+            className="object-cover object-[78%_center] sm:object-[72%_center] lg:object-[82%_center] filter grayscale contrast-115 brightness-90 animate-fade-in"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/40" />
+          {/* Multi-layered cinematic gradient overlays:
+              1. Left-to-right gradient ensuring text on left/center is 100% crisp & readable
+              2. Top and bottom vignette so header and scroll indicator blend smoothly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/85 to-transparent sm:via-zinc-950/75 lg:from-zinc-950 lg:via-zinc-950/70 lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/80" />
+          <div className="absolute inset-0 bg-black/25 sm:bg-transparent" />
         </div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <div
-            className="inline-flex items-center gap-2 border border-white/20 bg-white/5 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.3em] text-zinc-300 mb-6 animate-fade-up opacity-0"
-            style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            SS26 STREETWEAR DROP · 16 NEW STYLES
-          </div>
-
-          <h1
-            className="text-[clamp(3rem,11vw,8.5rem)] font-black leading-[0.9] tracking-tighter text-white animate-fade-up opacity-0"
-            style={{
-              animationDelay: "0.2s",
-              animationFillMode: "forwards",
-              fontFamily: "var(--font-display, 'Impact')",
-            }}
-          >
-            WEAR YOUR<br />
-            <span className="text-transparent" style={{ WebkitTextStroke: "2px white" }}>
-              ATTITUDE.
-            </span>
-          </h1>
-
-          <p
-            className="mt-6 text-zinc-300 text-base sm:text-lg max-w-lg mx-auto leading-relaxed animate-fade-up opacity-0 font-medium"
-            style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}
-          >
-            240 GSM heavy combed cotton. Boxy drop-shoulder silhouettes. Unapologetic streetwear designed to turn heads.
-          </p>
-
-          <div
-            className="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-up opacity-0"
-            style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
-          >
-            <Link
-              href="/shop"
-              data-cursor="view"
-              className="bg-white text-zinc-950 px-10 py-4 text-xs font-black tracking-widest hover:bg-zinc-200 transition-colors shadow-2xl"
+        {/* Content Container positioned to left / center */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col items-start text-left">
+          <div className="max-w-2xl">
+            {/* SS26 Badge */}
+            <div
+              className="inline-flex items-center gap-2 border border-white/20 bg-zinc-950/70 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-[0.3em] text-zinc-300 mb-6 animate-fade-up opacity-0"
+              style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
             >
-              SHOP ALL TEES ({PRODUCTS.length})
-            </Link>
-            <Link
-              href="/collections"
-              className="border border-white/70 text-white px-10 py-4 text-xs font-black tracking-widest hover:bg-white/10 transition-colors backdrop-blur-sm"
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              SS26 STREETWEAR DROP · 16 NEW STYLES
+            </div>
+
+            {/* Headline */}
+            <h1
+              className="text-[clamp(2.9rem,8.5vw,7.2rem)] font-black leading-[0.92] tracking-tighter text-white animate-fade-up opacity-0"
+              style={{
+                animationDelay: "0.2s",
+                animationFillMode: "forwards",
+                fontFamily: "var(--font-display, 'Impact')",
+              }}
             >
-              EXPLORE COLLECTIONS
-            </Link>
+              WEAR YOUR<br />
+              <span className="text-transparent" style={{ WebkitTextStroke: "2px white" }}>
+                ATTITUDE.
+              </span>
+            </h1>
+
+            {/* Product description */}
+            <p
+              className="mt-6 text-zinc-300 text-base sm:text-lg max-w-lg leading-relaxed animate-fade-up opacity-0 font-medium drop-shadow-sm"
+              style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}
+            >
+              240 GSM heavy combed cotton. Boxy drop-shoulder silhouettes. Unapologetic streetwear designed to turn heads.
+            </p>
+
+            {/* CTAs */}
+            <div
+              className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up opacity-0"
+              style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
+            >
+              <Link
+                href="/shop"
+                data-cursor="view"
+                className="bg-white text-zinc-950 px-9 py-4 text-xs font-black tracking-widest hover:bg-zinc-200 transition-colors shadow-2xl"
+              >
+                SHOP ALL TEES ({PRODUCTS.length})
+              </Link>
+              <Link
+                href="/collections"
+                className="border border-white/70 text-white px-9 py-4 text-xs font-black tracking-widest hover:bg-white/10 transition-colors backdrop-blur-sm"
+              >
+                EXPLORE COLLECTIONS
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
         <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-fade-in"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 animate-fade-in"
           style={{ animationDelay: "1.2s" }}
         >
           <span className="text-[10px] font-bold tracking-widest uppercase">Scroll</span>
