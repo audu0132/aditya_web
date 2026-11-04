@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
 import MobileNav from "./MobileNav";
+import RawThreadLogo from "./brand/RawThreadLogo";
 
 export default function Header() {
   const { totalItems, toggleCart } = useCart();
@@ -36,10 +37,15 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-black tracking-widest text-zinc-950 hover:opacity-70 transition-opacity"
-            style={{ fontFamily: "var(--font-display, 'Impact')" }}
+            className="hover:opacity-85 transition-opacity"
+            aria-label="RAW THREAD Home"
           >
-            STREETKRAFT
+            <RawThreadLogo
+              size="sm"
+              concept="S"
+              variant={scrolled ? "dark" : "light"}
+              showTagline={false}
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -48,16 +54,24 @@ export default function Header() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium tracking-wide text-zinc-700 hover:text-zinc-950 transition-colors relative group"
+                className={`text-sm font-medium tracking-wide transition-colors relative group ${
+                  scrolled
+                    ? "text-zinc-700 hover:text-zinc-950"
+                    : "text-zinc-200 hover:text-white"
+                }`}
               >
                 {l.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-zinc-950 group-hover:w-full transition-all duration-200" />
+                <span
+                  className={`absolute -bottom-0.5 left-0 w-0 h-px group-hover:w-full transition-all duration-200 ${
+                    scrolled ? "bg-zinc-950" : "bg-white"
+                  }`}
+                />
               </Link>
             ))}
           </nav>
 
           {/* Icons */}
-          <div className="flex items-center gap-4">
+          <div className={`flex items-center gap-4 ${scrolled ? "text-zinc-950" : "text-white"}`}>
             {/* Search */}
             <Link href="/search" aria-label="Search" className="hidden sm:flex p-2 hover:opacity-60 transition-opacity">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -71,7 +85,9 @@ export default function Header() {
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
               </svg>
               {wishCount > 0 && (
-                <span className="absolute top-1 right-1 bg-zinc-950 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                <span className={`absolute top-1 right-1 text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center ${
+                  scrolled ? "bg-zinc-950 text-white" : "bg-white text-zinc-950"
+                }`}>
                   {wishCount}
                 </span>
               )}
@@ -81,14 +97,16 @@ export default function Header() {
             <button
               onClick={() => toggleCart(true)}
               aria-label={`Shopping bag (${totalItems} items)`}
-              className="relative p-2 hover:opacity-60 transition-opacity"
+              className="relative p-2 hover:opacity-60 transition-opacity cursor-pointer"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
                 <path d="M16 10a4 4 0 0 1-8 0"/>
               </svg>
               {totalItems > 0 && (
-                <span className="absolute top-1 right-1 bg-zinc-950 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                <span className={`absolute top-1 right-1 text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center ${
+                  scrolled ? "bg-zinc-950 text-white" : "bg-white text-zinc-950"
+                }`}>
                   {totalItems}
                 </span>
               )}

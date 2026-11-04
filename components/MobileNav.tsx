@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect } from "react";
+import RawThreadLogo from "./brand/RawThreadLogo";
 
 interface MobileNavProps {
   links: { href: string; label: string }[];
@@ -33,12 +34,14 @@ export default function MobileNav({ links, isOpen, onClose }: MobileNavProps) {
       >
         {/* header */}
         <div className="flex items-center justify-between px-6 h-16 border-b border-zinc-100">
-          <span
-            className="text-xl font-black tracking-widest"
-            style={{ fontFamily: "var(--font-display, 'Impact')" }}
-          >
-            STREETKRAFT
-          </span>
+          <Link href="/" onClick={onClose} aria-label="RAW THREAD Home">
+            <RawThreadLogo
+              size="sm"
+              concept="S"
+              variant="dark"
+              showTagline={false}
+            />
+          </Link>
           <button onClick={onClose} aria-label="Close menu" className="p-2 hover:opacity-60 transition-opacity">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
