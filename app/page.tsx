@@ -409,7 +409,7 @@ export default function HomePage() {
 
           <div className="border-t border-zinc-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-zinc-500 text-xs">
-              © 2026 STREETKRAFT APPAREL. All rights reserved.
+              © 2026 RAW THREAD APPAREL. All rights reserved.
             </p>
             <p className="text-zinc-500 text-xs">
               Crafted in India · All prices in Indian Rupee (₹ INR)
