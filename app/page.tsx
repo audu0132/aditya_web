@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import NewsletterForm from "@/components/NewsletterForm";
+import RawThreadLogo from "@/components/brand/RawThreadLogo";
+import RawThreadWelcomeAnimation from "@/components/brand/RawThreadWelcomeAnimation";
+import RawThreadBrandShowcase from "@/components/brand/RawThreadBrandShowcase";
 import { PRODUCTS, CATEGORIES } from "@/lib/products";
 import type { Metadata } from "next";
 
