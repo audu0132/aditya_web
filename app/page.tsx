@@ -9,8 +9,8 @@ import { PRODUCTS, CATEGORIES } from "@/lib/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "STREETKRAFT — Premium Streetwear T-Shirts",
-  description: "Oversized, graphic, printed and minimal tees. 240 GSM heavy cotton. Free shipping above ₹999.",
+  title: "RAW THREAD — Sanskriti Indic Sūtra Edition Streetwear",
+  description: "RAW THREAD SS26 Drop. Oversized, graphic, printed and minimal tees. 240 GSM heavy cotton. Free shipping above ₹999.",
 };
 
 export default function HomePage() {
