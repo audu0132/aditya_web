@@ -12,14 +12,14 @@ import StreetwearMascot from "@/components/StreetwearMascot";
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
 export const metadata: Metadata = {
-  title: { default: "STREETKRAFT — Premium Streetwear T-Shirts", template: "%s | STREETKRAFT" },
+  title: { default: "RAW THREAD — Sanskriti Indic Sūtra Edition Streetwear", template: "%s | RAW THREAD" },
   description:
-    "Premium streetwear T-shirts for Gen-Z and young adults. Oversized, graphic, printed and minimal tees. Free shipping above ₹999.",
-  keywords: ["t-shirt", "streetwear", "oversized tee", "graphic tee", "fashion"],
+    "RAW THREAD — Sanskriti Indic Sūtra Edition. Premium streetwear T-shirts for Gen-Z and young adults. Oversized, graphic, printed and minimal tees. Free shipping above ₹999.",
+  keywords: ["raw thread", "sūtra", "t-shirt", "streetwear", "oversized tee", "graphic tee", "fashion"],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "STREETKRAFT",
+    siteName: "RAW THREAD",
   },
 };
 
