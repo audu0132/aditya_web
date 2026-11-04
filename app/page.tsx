@@ -27,6 +27,9 @@ export default function HomePage() {
 
   return (
     <>
+      {/* ═══ RAW THREAD RUNNING BOY WELCOME ENTRANCE ANIMATION ═══════ */}
+      <RawThreadWelcomeAnimation />
+
       {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
       <section className="relative h-screen min-h-[660px] flex items-center overflow-hidden bg-zinc-950 pt-20 pb-16">
         {/* Cinematic Male Streetwear Model Background (Stored locally in public/images) */}
@@ -327,6 +330,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══ RAW THREAD BRAND SHOWCASE ═════════════════════════════════ */}
+      <RawThreadBrandShowcase />
+
       {/* ═══ FOOTER ═════════════════════════════════════════════════════ */}
       <footer className="bg-zinc-950 text-white pt-16 pb-8 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
@@ -339,17 +345,14 @@ export default function HomePage() {
               </span>
             </div>
             <span className="text-[10px] uppercase tracking-wider text-zinc-500">
-              STREETKRAFT STUDIO
+              RAW THREAD STUDIO
             </span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2 sm:col-span-1">
-              <div
-                className="text-2xl font-black tracking-widest mb-4"
-                style={{ fontFamily: "var(--font-display, 'Impact')" }}
-              >
-                STREETKRAFT
+              <div className="mb-4">
+                <RawThreadLogo size="md" concept="S" variant="light" />
               </div>
               <p className="text-zinc-400 text-xs leading-relaxed">
                 Independent streetwear label crafted for the digital generation. 240 GSM heavy cotton silhouettes built for longevity.
