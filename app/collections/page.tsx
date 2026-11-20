@@ -4,7 +4,7 @@ import { CATEGORIES } from "@/lib/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Collections — STREETKRAFT",
+  title: "Collections — RAW THREAD",
   description: "Browse our T-shirt collections — oversized, graphic, printed and minimal streetwear.",
 };
 

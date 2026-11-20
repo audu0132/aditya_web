@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About STREETKRAFT",
-  description: "Our story — why we started STREETKRAFT and what we stand for.",
+  title: "About RAW THREAD",
+  description: "Our story — why we started RAW THREAD and what we stand for.",
 };
 
 export default function AboutPage() {
@@ -24,9 +24,9 @@ export default function AboutPage() {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-12">
         <div>
-          <h2 className="text-2xl font-black mb-4">Why STREETKRAFT?</h2>
+          <h2 className="text-2xl font-black mb-4">Why RAW THREAD?</h2>
           <p className="text-zinc-600 leading-relaxed">
-            STREETKRAFT was born out of a simple frustration: finding high-quality streetwear in India that didn't compromise on fit, fabric, or attitude. We set out to build a brand that Gen-Z and young adults could genuinely call their own — no watered-down designs, no fast-fashion compromises.
+            RAW THREAD was born out of a simple frustration: finding high-quality streetwear in India that didn't compromise on fit, fabric, or identity. We set out to build a brand that Gen-Z and young adults could genuinely call their own — combining sacred Indic fiber heritage (Sūtra Edition) with unapologetic modern urban silhouettes.
           </p>
         </div>
 

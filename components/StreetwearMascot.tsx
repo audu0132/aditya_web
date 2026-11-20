@@ -36,7 +36,7 @@ export default function StreetwearMascot() {
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-[11px] font-black tracking-widest text-zinc-300 uppercase">
-                STREETKRAFT BOT
+                RAW THREAD BOT
               </span>
             </div>
             <button
@@ -62,7 +62,7 @@ export default function StreetwearMascot() {
             <div className="bg-zinc-900 border border-zinc-800 p-2.5 rounded text-[11px] flex items-center justify-between">
               <span className="text-zinc-400">Promo Code:</span>
               <span className="font-mono font-black text-amber-400 tracking-wider">
-                STREET10
+                RAW10
               </span>
             </div>
           </div>

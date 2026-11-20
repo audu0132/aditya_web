@@ -61,11 +61,11 @@ export default function RawThreadLogo({
     }
   > = {
     sm: {
-      icon: 24,
-      brandText: "text-sm tracking-[0.2em]",
+      icon: 28,
+      brandText: "text-base sm:text-lg tracking-[0.22em]",
       sanskritText: "text-[9px]",
       taglineText: "text-[8px] tracking-[0.22em]",
-      gap: "gap-2",
+      gap: "gap-2.5",
     },
     md: {
       icon: 36,

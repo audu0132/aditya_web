@@ -60,7 +60,7 @@ export default function HomePage() {
               style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              SS26 STREETWEAR DROP · 16 NEW STYLES
+              RAW THREAD SS26 DROP · 16 NEW STYLES
             </div>
 
             {/* Headline */}
